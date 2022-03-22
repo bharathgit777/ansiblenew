@@ -14,10 +14,10 @@
        name: nodejs
        state: present
        update_cache: yes
-      when: ansible_facts['os_family']== "Redhat"
+      when: ansible_facts['os_family']== "RedHat"
     - name: install java on node 2 Redhat
       ansible.builtin.yum:
        name: java-11-openjdk
        state: present
        update_cache: yes
-      when: ansible_facts['os_family']== "Redhat"
+      when: ansible_facts['os_family']== "RedHat"
