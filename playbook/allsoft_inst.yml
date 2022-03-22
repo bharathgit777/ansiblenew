@@ -1,0 +1,23 @@
+---
+- name: Install Java and node JS on two nodes
+  become: yes
+  hosts: all
+  tasks:
+    - name: install nodejs on node 1 Ubuntu
+      ansible.builtin.apt:
+       name: nodejs
+       state: present
+       update_cache: yes
+      when: ansible_facts['os_family']== "Debian"
+   - name: install nodejs on node 2 Redhat
+      ansible.builtin.yum:
+       name: nodejs
+       state: present
+       update_cache: yes
+      when: ansible_facts['os_family']=="Redhat"
+   - name: install java on node 2 Redhat
+      ansible.builtin.yum:
+       name: openjdk-11-jdk
+       state: present
+       update_cache: yes
+      when: ansible_facts['os_family']=="Redhat"
