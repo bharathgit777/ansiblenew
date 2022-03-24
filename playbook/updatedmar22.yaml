@@ -1,0 +1,29 @@
+---
+- name: Install java and node js using os packing manager command 
+  become: yes
+  hosts: desired
+- vars:
+   javar: java-11-openjdk
+   java: openjdk-11-jdk
+   node: node js
+  tasks:
+   - name: install java on node 1
+     package:
+      name: "{{java}}" 
+      update_cache: yes
+      state: present
+   - name: install node js on node 1
+     package:
+      name: "{{node}}" 
+      update_cache: yes
+      state: present 
+   - name: install java on node 2
+     package:
+      name: "{{javar}}" 
+      update_cache: yes
+      state: present
+   - name: install node js on node 2
+     package:
+      name: "{{node}}" 
+      update_cache: yes
+      state: present 
