@@ -5,7 +5,7 @@
   vars:
    - javar: java-11-openjdk
    - java: openjdk-11-jdk
-   - node: node js
+   - node: nodejs
   tasks:
    - name: install java on node 1
      package:
