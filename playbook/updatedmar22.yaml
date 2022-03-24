@@ -1,7 +1,7 @@
 ---
 - name: Install java and node js using os packing manager command 
   become: yes
-  hosts: desired
+  hosts: all
 - vars:
    javar: java-11-openjdk
    java: openjdk-11-jdk
