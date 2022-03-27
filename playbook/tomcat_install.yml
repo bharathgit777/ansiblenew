@@ -56,7 +56,7 @@
       var: sh_files_tomcat_bin
    - name: make the shell scripts executable
      ansible.builtin.file:
-      path: '{{ items.path }}'
+      path: '{{ item.path }}'
       group: "{{ username }}"
       owner: "{{ username }}" 
       mode: '0755'
