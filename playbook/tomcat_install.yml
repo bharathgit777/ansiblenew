@@ -19,7 +19,7 @@
       name: "{{ username }}"
       home: "{{ home_directory }}"
       shell: "{{ shell_directory }}"
-      state: yes
+      state: present
    - name: download content
      ansible.builtin.get_url:
       url: "https://dlcdn.apache.org/tomcat/tomcat-9/v{{ tomcat_version }}/bin/apache-tomcat-{{ tomcat_version }}.tar.gz"
