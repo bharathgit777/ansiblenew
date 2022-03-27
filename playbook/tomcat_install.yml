@@ -11,11 +11,6 @@
    - tomcat_bin_directory: /opt/tomcat/latest/bin/
    - tomcat_service_location: /etc/systemd/system/tomcat.service
   tasks:
-   - name: install default jdk
-     ansible.builtin.apt:
-      name: openjdk-11-jdk
-      upadate_cache: yes
-      state: present
    - name: upadte cache and repo
      apt: 
       update_cache: yes
