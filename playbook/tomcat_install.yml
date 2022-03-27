@@ -50,7 +50,7 @@
      ansible.builtin.find:
       paths: "{{ tomcat_bin_directory }}"
       patterns: "*.sh"
-      register: sh_files_tomcat_bin
+    register: sh_files_tomcat_bin
    - name: print the shell variables
      debug:
       var: sh_files_tomcat_bin
