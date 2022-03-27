@@ -49,7 +49,7 @@
    - name: find the shell files in bin directory
      ansible.builtin.find:
       paths: "{{ tomcat_bin_directory }}"
-      patterns: '*.sh'
+      patterns: "*.sh"
       register: sh_files_tomcat_bin
    - name: print the shell variables
      debug:
