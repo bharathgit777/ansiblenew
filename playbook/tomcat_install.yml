@@ -28,13 +28,13 @@
      ansible.builtin.unarchive:
       src: "/tmp/apache-tomcat-{{ tomcat_version }}.tar.gz"
       dest: "{{ home_directory }}"
-      creates: "{{ home_directory }}/ apache-tomcat-{{ tomcat_version }}"
+      creates: "{{ home_directory }}/apache-tomcat-{{ tomcat_version }}"
       group: "{{ username }}"
       owner: "{{ username }}"
       remote_src: yes
    - name: create symbolic link- symlink
      ansible.builtin.file:
-      src: "{{ home_directory }}/ apache-tomcat-{{ tomcat_version }}"
+      src: "{{ home_directory }}/apache-tomcat-{{ tomcat_version }}"
       dest: "{{ tomcat_latest }}"
       group: "{{ username }}"
       owner: "{{ username }}"
