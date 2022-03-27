@@ -67,6 +67,7 @@
       mode: '0755'
      loop: "{{ sh_files_tomcat_bin.files }}"
    - name: copy the tomcat service file
+     ansible.builtin.copy:
       src: 'tomcat.service'
       dest: "{{ tomcat_service_location }}"
       group: "{{ username }}"
