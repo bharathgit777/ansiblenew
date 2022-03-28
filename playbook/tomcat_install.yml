@@ -4,6 +4,7 @@
   hosts: all
   vars:
    - username: tomcat
+   - java_package: openjdk-11-jdk
    - home_directory: /opt/tomcat
    - shell_directory: /bin/false
    - tomcat_version: 9.0.60
@@ -14,6 +15,10 @@
    - name: upadte cache and repo
      apt: 
       update_cache: yes
+   - name: install openjdk 11
+     package:
+      name: "{{ java_package }}"
+      state: present
    - name: create user for tomcat
      ansible.builtin.user:
       name: "{{ username }}"
