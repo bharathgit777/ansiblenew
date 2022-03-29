@@ -5,6 +5,7 @@
   vars:
    - apache_pacakage: apache2
    - sql_pacakge: mysql-server
+  tasks:
    - name: install apache server
      package:
       name: "{{ apache_pacakage }}"
