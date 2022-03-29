@@ -15,11 +15,12 @@
       state: present
    - name: allow traffic on port 80 for apache
      community.general.ufw:
+      name: 'apache'
       rule: allow
       port: '80'
       proto: tcp
       state: enabled 
    - name: install SQL server
      package:
-      name: "{{ mysql-server }}"
+      name: "{{ sql_pacakge }}"
       state: present
