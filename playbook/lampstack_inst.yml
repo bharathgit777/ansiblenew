@@ -1,0 +1,26 @@
+---
+- name: Create users and download tomcat and install tomcat
+  become: yes
+  hosts: all
+  vars:
+   - apache_pacakage: apache2
+   - sql_pacakge: mysql-server
+   -
+  tasks:
+   - name: upadte cache and repo
+     apt: 
+      update_cache: yes
+   - name: install apache server
+     package:
+      name: "{{ apache_pacakage }}"
+      state: present
+   - name: allow traffic on port 80 for apache
+     community.general.ufw:
+      rule: allow
+      port: '80'
+      proto: tcp
+      state: enabled 
+   - name: install SQL server
+     package:
+      name: "{{ mysql-server }}"
+      state: present
