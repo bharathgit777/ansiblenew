@@ -5,7 +5,6 @@
   vars:
    - apache_pacakage: apache2
    - sql_pacakge: mysql-server
-   -
   tasks:
    - name: upadte cache and repo
      apt: 
